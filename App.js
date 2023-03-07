@@ -5,11 +5,11 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.form}>
-        <TextInput placeholder="My Goal" />
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.textInput} placeholder="My Goal" />
         <Button title="Tap Me" />
       </View>
-      <View style={styles.content}>
+      <View style={styles.contentContainer}>
         <Text>List of My Goal</Text>
       </View>
     </View>
@@ -18,17 +18,29 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    height: 200,
-    padding: 10,
+    flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    paddingTop: 50,
+    paddingHorizontal: 20
   },
-  form: {
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#cccccc',
+    width: '70%',
+    marginRight: 8,
+    padding: 8,
+  },
+  inputContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-around',
+    paddingBottom: 10,
+    marginBottom: 20,
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: '#ccc'
   }, 
-  content: {
-    flex: 3
+  contentContainer: {
+    flex: 10,
   }
 });
